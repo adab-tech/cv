@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FR102 Attendance Fall 2025</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; }
+  h1 { color: #2E8B57; }
+  label { margin-right: 10px; }
+  table { border-collapse: collapse; margin-top: 20px; width: 100%; max-width: 600px; }
+  th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+  th { background-color: #4CAF50; color: white; }
+  .present { background-color: #c8e6c9; }
+  .absent { background-color: #ffcdd2; }
+  button { margin-top: 15px; padding: 10px 20px; font-size: 16px; cursor: pointer; }
+</style>
+</head>
+<body>
+
+<h1>FR102 Attendance - Fall 2025 (MWF)</h1>
+
+<label for="dateSelect">Select Class Date:</label>
+<select id="dateSelect"></select>
+
+<form id="attendanceForm"></form>
+
+<button id="saveBtn">Save Attendance</button>
+
+<h2>Attendance Summary</h2>
+<div id="summary"></div>
+
+<script>
+  const students = [
+    "Alice Johnson",
+    "Bob Smith",
+    "Charlie Davis",
+    "Diana Moore",
+    "Ethan Brown"
+  ];
+
+  // Semester dates
+  const semesterStart = new Date(2025, 7, 25); // Aug 25, 2025 (month is 0-indexed)
+  const semesterEnd = new Date(2025, 11, 12);  // Dec 12, 2025
+
+  // Class days: Monday=1, Wednesday=3, Friday=5 in JS getDay() (Sunday=0)
+  const classDays = [1, 3, 5];
+
+  // Generate class dates
+  function generateClassDates(start, end, days) {
+    const dates = [];
+    let current = new Date(start);
+    while (current <= end) {
+      if (days.includes(current.getDay())) {
+        dates.push(new Date(current));
+      }
+      current.setDate(current.getDate() + 1);
+    }
+    return dates;
+  }
+
+  const classDates = generateClassDates(semesterStart, semesterEnd, classDays);
+
+  // Populate date dropdown
+  const dateSelect = document.getElementById('dateSelect');
+  classDates.forEach(date => {
+    c
+debugger
+PaymentMethodChangeEvent
